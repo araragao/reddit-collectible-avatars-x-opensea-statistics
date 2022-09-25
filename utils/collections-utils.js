@@ -48,77 +48,77 @@ function structureCollectionStats(unstructuredCollectionStats) {
     for (const [index, [key, value]] of Object.entries(Object.entries(unstructuredCollectionStats))) {
         if(regexStartsWithOneHour.test(key)) {
             if(regexDoesNotContainSales.test(key) && regexContainsChange.test(key)) {
-                collectionOnehourStats["change"] = value;
+                collectionOnehourStats["change"] = parseFloat(value).toFixed(4);
             } else if(regexContainsSales.test(key)) {
                 collectionOnehourStats["sales"] = value;
             } else if(regexContainsSalesChange.test(key)) {
-                collectionOnehourStats["sales_change"] = value;
+                collectionOnehourStats["sales_change"] = parseFloat(value).toFixed(4);
             } else if(regexContainsAveragePrice.test(key)) {
-                collectionOnehourStats["average_price"] = value;
+                collectionOnehourStats["average_price"] = parseFloat(value).toFixed(4);
             } else if(regexContainsDifference.test(key)) {
-                collectionOnehourStats["difference"] = value;
+                collectionOnehourStats["difference"] = parseFloat(value).toFixed(4);
             } else if(regexContainsVolume.test(key)) {
-                collectionOnehourStats["volume"] = value;
+                collectionOnehourStats["volume"] = parseFloat(value).toFixed(4);
             }
         } else if(regexStartsWithSixHours.test(key)) {
             if(regexDoesNotContainSales.test(key) && regexContainsChange.test(key)) {
-                collectionSixHoursStats["change"] = value;
+                collectionSixHoursStats["change"] = parseFloat(value).toFixed(4);
             } else if(regexContainsSales.test(key)) {
                 collectionSixHoursStats["sales"] = value;
             } else if(regexContainsSalesChange.test(key)) {
-                collectionSixHoursStats["sales_change"] = value;
+                collectionSixHoursStats["sales_change"] = parseFloat(value).toFixed(4);
             } else if(regexContainsAveragePrice.test(key)) {
-                collectionSixHoursStats["average_price"] = value;
+                collectionSixHoursStats["average_price"] = parseFloat(value).toFixed(4);
             } else if(regexContainsDifference.test(key)) {
-                collectionSixHoursStats["difference"] = value;
+                collectionSixHoursStats["difference"] = parseFloat(value).toFixed(4);
             } else if(regexContainsVolume.test(key)) {
-                collectionSixHoursStats["volume"] = value;
+                collectionSixHoursStats["volume"] = parseFloat(value).toFixed(4);
             }
         } else if(regexStartsWithOneDay.test(key)) {
             if(regexDoesNotContainSales.test(key) && regexContainsChange.test(key)) {
-                collectionOneDayStats["change"] = value;
+                collectionOneDayStats["change"] = parseFloat(value).toFixed(4);
             } else if(regexContainsSales.test(key)) {
                 collectionOneDayStats["sales"] = value;
             } else if(regexContainsSalesChange.test(key)) {
-                collectionOneDayStats["sales_change"] = value;
+                collectionOneDayStats["sales_change"] = parseFloat(value).toFixed(4);
             } else if(regexContainsAveragePrice.test(key)) {
-                collectionOneDayStats["average_price"] = value;
+                collectionOneDayStats["average_price"] = parseFloat(value).toFixed(4);
             } else if(regexContainsDifference.test(key)) {
-                collectionOneDayStats["difference"] = value;
+                collectionOneDayStats["difference"] = parseFloat(value).toFixed(4);
             } else if(regexContainsVolume.test(key)) {
-                collectionOneDayStats["volume"] = value;
+                collectionOneDayStats["volume"] = parseFloat(value).toFixed(4);
             }
         } else if(regexStartsWithSevenDays.test(key)) {
             if(regexDoesNotContainSales.test(key) && regexContainsChange.test(key)) {
-                collectionSevenDaysStats["change"] = value;
+                collectionSevenDaysStats["change"] = parseFloat(value).toFixed(4);
             } else if(regexContainsSales.test(key)) {
                 collectionSevenDaysStats["sales"] = value;
             } else if(regexContainsSalesChange.test(key)) {
-                collectionSevenDaysStats["sales_change"] = value;
+                collectionSevenDaysStats["sales_change"] = parseFloat(value).toFixed(4);
             } else if(regexContainsAveragePrice.test(key)) {
-                collectionSevenDaysStats["average_price"] = value;
+                collectionSevenDaysStats["average_price"] = parseFloat(value).toFixed(4);
             } else if(regexContainsDifference.test(key)) {
-                collectionSevenDaysStats["difference"] = value;
+                collectionSevenDaysStats["difference"] = parseFloat(value).toFixed(4);
             } else if(regexContainsVolume.test(key)) {
-                collectionSevenDaysStats["volume"] = value;
+                collectionSevenDaysStats["volume"] = parseFloat(value).toFixed(4);
             }
         } else if(regexStartsWithThirtyDays.test(key)) {
             if(regexDoesNotContainSales.test(key) && regexContainsChange.test(key)) {
-                collectionThirtyDaysStats["change"] = value;
+                collectionThirtyDaysStats["change"] = parseFloat(value).toFixed(4);
             } else if(regexContainsSales.test(key)) {
                 collectionThirtyDaysStats["sales"] = value;
             } else if(regexContainsSalesChange.test(key)) {
-                collectionThirtyDaysStats["sales_change"] = value;
+                collectionThirtyDaysStats["sales_change"] = parseFloat(value).toFixed(4);
             } else if(regexContainsAveragePrice.test(key)) {
-                collectionThirtyDaysStats["average_price"] = value;
+                collectionThirtyDaysStats["average_price"] = parseFloat(value).toFixed(4);
             } else if(regexContainsDifference.test(key)) {
-                collectionThirtyDaysStats["difference"] = value;
+                collectionThirtyDaysStats["difference"] = parseFloat(value).toFixed(4);
             } else if(regexContainsVolume.test(key)) {
-                collectionThirtyDaysStats["volume"] = value;
+                collectionThirtyDaysStats["volume"] = parseFloat(value).toFixed(4);
             }
         } else {
             if(regexContainsTotalVolume.test(key)) {
-                collectionGeneralStats["total_volume"] = parseFloat(value).toFixed(3);
+                collectionGeneralStats["total_volume"] = parseFloat(value).toFixed(4);
             } else if(regexContainsTotalSales.test(key)) {
                 collectionGeneralStats["total_sales"] = value;
             } else if(regexContainsTotalSupply.test(key)) {
@@ -128,13 +128,13 @@ function structureCollectionStats(unstructuredCollectionStats) {
             } else if(regexContainsNumOwners.test(key)) {
                 collectionGeneralStats["num_owners"] = value;
             } else if(regexContainsAveragePrice.test(key)) {
-                collectionGeneralStats["average_price"] = parseFloat(value).toFixed(3);
+                collectionGeneralStats["average_price"] = parseFloat(value).toFixed(4);
             } else if(regexContainsNumReports.test(key)) {
                 collectionGeneralStats["num_reports"] = value;
             } else if(regexContainsMarketCap.test(key)) {
-                collectionGeneralStats["market_cap"] = parseFloat(value).toFixed(3);
+                collectionGeneralStats["market_cap"] = parseFloat(value).toFixed(4);
             } else if(regexContainsFloorprice.test(key)) {
-                collectionGeneralStats["floor_price"] = parseFloat(value).toFixed(3);
+                collectionGeneralStats["floor_price"] = parseFloat(value).toFixed(4);
             }
         }
     }
