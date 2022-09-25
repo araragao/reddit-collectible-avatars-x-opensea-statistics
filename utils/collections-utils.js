@@ -118,7 +118,7 @@ function structureCollectionStats(unstructuredCollectionStats) {
             }
         } else {
             if(regexContainsTotalVolume.test(key)) {
-                collectionGeneralStats["total_volume"] = value;
+                collectionGeneralStats["total_volume"] = parseFloat(value).toFixed(3);
             } else if(regexContainsTotalSales.test(key)) {
                 collectionGeneralStats["total_sales"] = value;
             } else if(regexContainsTotalSupply.test(key)) {
@@ -128,13 +128,13 @@ function structureCollectionStats(unstructuredCollectionStats) {
             } else if(regexContainsNumOwners.test(key)) {
                 collectionGeneralStats["num_owners"] = value;
             } else if(regexContainsAveragePrice.test(key)) {
-                collectionGeneralStats["average_price"] = value;
+                collectionGeneralStats["average_price"] = parseFloat(value).toFixed(3);
             } else if(regexContainsNumReports.test(key)) {
                 collectionGeneralStats["num_reports"] = value;
             } else if(regexContainsMarketCap.test(key)) {
-                collectionGeneralStats["market_cap"] = value;
+                collectionGeneralStats["market_cap"] = parseFloat(value).toFixed(3);
             } else if(regexContainsFloorprice.test(key)) {
-                collectionGeneralStats["floor_price"] = value;
+                collectionGeneralStats["floor_price"] = parseFloat(value).toFixed(3);
             }
         }
     }

@@ -6,15 +6,17 @@ var storage = require('../services/storage');
 router.get('/', async function (req, res, next) {
   const generalStatsHeaders = [
     "Collection",
-    "Total volume",
-    "Total sales",
-    "Total supply",
-    "Count",
-    "Number of owners",
-    "Average price",
-    "Number of reports",
-    "Market cap",
-    "Floor price",
+    "Σ Volume",
+    "# Sales",
+    "# Avatars",
+    // (araragao): unwanted information
+    // "Count",
+    "# Owners",
+    "μ price",
+    // (araragao): unwanted information
+    // "Number of reports",
+    "MC",
+    "Price floor",
   ];
 
   const timeIntervalHeaders = [

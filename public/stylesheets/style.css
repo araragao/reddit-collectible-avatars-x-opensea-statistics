@@ -1,15 +1,42 @@
-body {
-  padding: 50px;
-  font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
-  background: #fb3c1b;
-  color: #ffffff;
-  width: 100%;
+html {
+  display: table;
+  margin: auto;
 }
 
-table {
-  width: 100%;
+head {
+  text-align: center;
+}
+
+body {
+  display: table-cell;
+  vertical-align: middle;
+  font: 14px Helvetica, Arial, sans-serif;
+  background: #ffffff;
+}
+
+h1 {
+  color: #fb3c1b;
+}
+
+h2 {
+  color: #fb3c1b;
+}
+
+tr {
+
+}
+
+th, td {
+  padding-left: 5;
+  padding-right: 40px;
+  text-align: left;
+  color: black;
+}
+
+th {
+  font-size: medium;
 }
 
 td {
-  font: 8px;
+  font-size: small;
 }

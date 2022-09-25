@@ -105,3 +105,6 @@ dist
 
 # node-persist folder
 .node-persist
+
+#system
+.DS_Store
