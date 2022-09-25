@@ -2,4 +2,22 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
+
+  h2= "General statistics"
+    table
+      thead
+        each header in generalStatisticsHeaders
+            th #{header}
+      tbody
+        each collectionStats, collectionName in collectionsStatistics
+          tr
+            td=collectionName
+            td=collectionStats.general_stats.total_volume
+            td=collectionStats.general_stats.total_sales
+            td=collectionStats.general_stats.total_supply
+            td=collectionStats.general_stats.count
+            td=collectionStats.general_stats.num_owners
+            td=collectionStats.general_stats.average_price
+            td=collectionStats.general_stats.num_reports
+            td=collectionStats.general_stats.market_cap
+            td=collectionStats.general_stats.floor_price

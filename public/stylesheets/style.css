@@ -2,4 +2,14 @@ body {
   padding: 50px;
   font: 14px "Helvetica Neue", Helvetica, Arial, sans-serif;
   background: #fb3c1b;
+  color: #ffffff;
+  width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+td {
+  font: 8px;
 }

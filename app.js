@@ -5,6 +5,8 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var schedulers = require('./services/schedulers');
+var storage = require('./services/storage');
 
 var app = express();
 
@@ -35,5 +37,11 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// schedulers initialization
+schedulers.initScheduledJobs();
+
+// storage initialization
+storage.initPersistenStorage();
 
 module.exports = app;
