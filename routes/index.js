@@ -7,27 +7,27 @@ var collectionsUtils = require('../utils/collections-utils');
 router.get('/', async function (req, res, next) {
   const generalStatsHeaders = [
     "Collection",
+    "Floor price",
+    "MC",
+    "# Avatars",
+    "# Owners"
+  ];
+
+  const allTimeStatsHeaders = [
+    "Collection",
     "Σ Volume",
     "# Sales",
-    "# Avatars",
-    // (araragao): unwanted information
-    // "Count",
-    "# Owners",
-    "μ price",
-    // (araragao): unwanted information
-    // "Number of reports",
-    "MC",
-    "Price floor",
+    "μ price"
   ];
 
   const timeFramesStatsHeaders = [
     "Collection",
-    "Change",
-    "Sales",
-    "Sales change",
+    "Σ Volume",
+    "∆ Volume",
+    "# Sales",
+    "∆ Sales",
     "μ price",
-    "Difference",
-    "Σ Volume"
+    "∆ price"
   ];
 
   const structuredCollectionsStats = await storage.getStorageItem("collectionsStats");
@@ -46,7 +46,8 @@ router.get('/', async function (req, res, next) {
   res.render('index', { title: "Reddit Collectible Avatars X OpenSea Statistics",
                         lastSync: timestampStats,
                         generalHeaders: generalStatsHeaders,
-                        timeFramesHeaders: timeFramesStatsHeaders,
+                        staticTimeFramesHeaders: allTimeStatsHeaders,
+                        dynamicTimeFramesHeaders: timeFramesStatsHeaders,
                         generalStats: collectionsGeneralStats,
                         oneHourStats: collectionsOneHourStats,
                         sixHoursStats: collectionsSixHoursStats,

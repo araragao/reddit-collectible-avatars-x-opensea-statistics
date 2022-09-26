@@ -13,101 +13,108 @@ block content
     tbody
       each collectionStats, collectionName in generalStats
         tr
-          td=collectionName
-          td=collectionStats.total_volume
-          td=collectionStats.total_sales
-          td=collectionStats.total_supply
-          // (araragao): unwanted information
-          // td=collectionStats.count
-          td=collectionStats.num_owners
-          td=collectionStats.average_price
-          // (araragao): unwanted information
-          // td=collectionStats.num_reports
-          td=collectionStats.market_cap
-          td=collectionStats.floor_price
-  
-  h2= "One Hour"
+          td.align-left=collectionName
+          td.align-right=collectionStats.floor_price
+          td.align-right=collectionStats.market_cap
+          td.align-right=collectionStats.total_supply
+          td.align-right=collectionStats.num_owners
+
+  h2= "All time"
 
   table
     thead
-      each header in timeFramesHeaders
+      each header in staticTimeFramesHeaders
+          th #{header}
+    tbody
+      each collectionStats, collectionName in generalStats
+        tr
+          td.align-left=collectionName
+          td.align-right=collectionStats.total_volume
+          td.align-right=collectionStats.total_sales
+          td.align-right=collectionStats.average_price
+  
+  h2= "∆ 1 Hour"
+
+  table
+    thead
+      each header in dynamicTimeFramesHeaders
           th #{header}
     tbody
       each collectionStats, collectionName in oneHourStats
         tr
-          td=collectionName
-          td=collectionStats.change
-          td=collectionStats.sales
-          td=collectionStats.sales_change
-          td=collectionStats.average_price
-          td=collectionStats.difference
-          td=collectionStats.volume
+          td.align-left=collectionName
+          td.align-right=collectionStats.volume
+          td.align-right=collectionStats.change
+          td.align-right=collectionStats.sales
+          td.align-right=collectionStats.sales_change
+          td.align-right=collectionStats.average_price
+          td.align-right=collectionStats.difference
     
-  h2= "Six Hours"
+  h2= "∆ 6 Hours"
 
   table
     thead
-      each header in timeFramesHeaders
+      each header in dynamicTimeFramesHeaders
           th #{header}
     tbody
       each collectionStats, collectionName in sixHoursStats
         tr
-          td=collectionName
-          td=collectionStats.change
-          td=collectionStats.sales
-          td=collectionStats.sales_change
-          td=collectionStats.average_price
-          td=collectionStats.difference
-          td=collectionStats.volume
-    
-  h2= "One Day"
+          td.align-left=collectionName
+          td.align-right=collectionStats.volume
+          td.align-right=collectionStats.change
+          td.align-right=collectionStats.sales
+          td.align-right=collectionStats.sales_change
+          td.align-right=collectionStats.average_price
+          td.align-right=collectionStats.difference
+
+  h2= "∆ 1 Day"
 
   table
     thead
-      each header in timeFramesHeaders
+      each header in dynamicTimeFramesHeaders
           th #{header}
     tbody
       each collectionStats, collectionName in oneDayStats
         tr
-          td=collectionName
-          td=collectionStats.change
-          td=collectionStats.sales
-          td=collectionStats.sales_change
-          td=collectionStats.average_price
-          td=collectionStats.difference
-          td=collectionStats.volume
+          td.align-left=collectionName
+          td.align-right=collectionStats.volume
+          td.align-right=collectionStats.change
+          td.align-right=collectionStats.sales
+          td.align-right=collectionStats.sales_change
+          td.align-right=collectionStats.average_price
+          td.align-right=collectionStats.difference
 
-  h2= "Seven Days"
+  h2= "∆ 7 Days"
 
   table
     thead
-      each header in timeFramesHeaders
+      each header in dynamicTimeFramesHeaders
           th #{header}
     tbody
       each collectionStats, collectionName in sevenDayStats
         tr
-          td=collectionName
-          td=collectionStats.change
-          td=collectionStats.sales
-          td=collectionStats.sales_change
-          td=collectionStats.average_price
-          td=collectionStats.difference
-          td=collectionStats.volume
+          td.align-left=collectionName
+          td.align-right=collectionStats.volume
+          td.align-right=collectionStats.change
+          td.align-right=collectionStats.sales
+          td.align-right=collectionStats.sales_change
+          td.align-right=collectionStats.average_price
+          td.align-right=collectionStats.difference
 
-  h2= "Thirty Days"
+  h2= "∆ 30 Days"
 
   table
     thead
-      each header in timeFramesHeaders
+      each header in dynamicTimeFramesHeaders
           th #{header}
     tbody
       each collectionStats, collectionName in thirtyDaysStats
         tr
-          td=collectionName
-          td=collectionStats.change
-          td=collectionStats.sales
-          td=collectionStats.sales_change
-          td=collectionStats.average_price
-          td=collectionStats.difference
-          td=collectionStats.volume
+          td.align-left=collectionName
+          td.align-right=collectionStats.volume
+          td.align-right=collectionStats.change
+          td.align-right=collectionStats.sales
+          td.align-right=collectionStats.sales_change
+          td.align-right=collectionStats.average_price
+          td.align-right=collectionStats.difference
 

@@ -34,14 +34,22 @@ table {
 
 th, td {
   padding-right: 20px;
-  text-align: left;
   color: black;
 }
 
 th {
+  text-align: center;
   font-size: medium;
 }
 
 td {
   font-size: small;
+}
+
+td.align-left {
+  text-align: left;
+}
+
+td.align-right {
+  text-align: right;
 }
