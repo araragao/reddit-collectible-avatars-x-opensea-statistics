@@ -23,6 +23,7 @@ const collectionsNameInOpenSeaStandard = [
   "doodle-collection-x-reddit-collectible-avatars",
   "gettin-groovy-x-reddit-collectible-avatars",
   "celestial-assembly-x-reddit-collectible-avatars",
+  "i-quit-my-job-to-be-an-artist-x-reddit-collectibl"
 ];
 
 const collectionsName = collectionsUtils.getCollectionsNameFromCollectionsNameInOpenSeaStardard(collectionsNameInOpenSeaStandard);
