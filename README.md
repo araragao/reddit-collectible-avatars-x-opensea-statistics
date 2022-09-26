@@ -1,4 +1,4 @@
-# Reddit Collectible Avatars Statistics Project
+# Reddit Collectible Avatars X OpenSea Statistics
 
 The title pretty much sums it up.
 
