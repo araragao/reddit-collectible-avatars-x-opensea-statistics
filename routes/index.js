@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var storage = require('../services/storage');
+var collectionsUtils = require('../utils/collections-utils');
 
 router.get('/', async function (req, res, next) {
   const generalStatsHeaders = [
@@ -29,44 +30,16 @@ router.get('/', async function (req, res, next) {
     "Σ Volume"
   ];
 
-  let collectionsStats = await storage.getStorageItem("collectionsStats");
+  const structuredCollectionsStats = await storage.getStorageItem("collectionsStats");
 
-  // (araragao): TO-DO: extract json destructuring to collections-utils
+  const collectionsSectionsStats = collectionsUtils.getCollectionsSectionsStatsFromStructuredCollectionsStats(structuredCollectionsStats);
 
-  let collectionsGeneralStats = {};
-  let collectionsOneHourStats = {};
-  let collectionsSixHoursStats = {};
-  let collectionsOneDayStats = {};
-  let collectionsSevenDaysStats = {};
-  let collectionsThirtyDaysStats = {};
-
-  for(collectionName in collectionsStats) {
-    let collectionStat = collectionsStats[collectionName];
-    for(collectionSection in collectionStat) {
-      switch(collectionSection) {
-        case "general_stats":
-          collectionsGeneralStats[collectionName] = collectionsStats[collectionName].general_stats;
-          break;
-        case "one_hour":
-          collectionsOneHourStats[collectionName] = collectionsStats[collectionName].one_hour;
-          break;
-        case "six_hours":
-          collectionsSixHoursStats[collectionName] = collectionsStats[collectionName].six_hours;
-          break;
-        case "one_day":
-          collectionsOneDayStats[collectionName] = collectionsStats[collectionName].one_day;
-          break;
-        case "seven_days":
-          collectionsSevenDaysStats[collectionName] = collectionsStats[collectionName].seven_days;
-          break;
-        case "thirty_days":
-          collectionsThirtyDaysStats[collectionName] = collectionsStats[collectionName].thirty_days;
-          break;
-        default:
-          break;
-      }
-    }
-  }
+  const collectionsGeneralStats = collectionsSectionsStats["general_stats"];
+  const collectionsOneHourStats = collectionsSectionsStats["one_hour"];
+  const collectionsSixHoursStats = collectionsSectionsStats["six_hours"];
+  const collectionsOneDayStats = collectionsSectionsStats["one_day"];
+  const collectionsSevenDaysStats = collectionsSectionsStats["seven_days"];
+  const collectionsThirtyDaysStats = collectionsSectionsStats["thirty_days"];
 
   res.render('index', { title: "Reddit Collectible Avatars X OpenSea Statistics",
                         generalHeaders: generalStatsHeaders,
