@@ -32,6 +32,8 @@ router.get('/', async function (req, res, next) {
 
   const structuredCollectionsStats = await storage.getStorageItem("collectionsStats");
 
+  const timestampStats = await storage.getStorageItem("timestampStats");
+
   const collectionsSectionsStats = collectionsUtils.getCollectionsSectionsStatsFromStructuredCollectionsStats(structuredCollectionsStats);
 
   const collectionsGeneralStats = collectionsSectionsStats["general_stats"];
@@ -42,6 +44,7 @@ router.get('/', async function (req, res, next) {
   const collectionsThirtyDaysStats = collectionsSectionsStats["thirty_days"];
 
   res.render('index', { title: "Reddit Collectible Avatars X OpenSea Statistics",
+                        lastSync: timestampStats,
                         generalHeaders: generalStatsHeaders,
                         timeFramesHeaders: timeFramesStatsHeaders,
                         generalStats: collectionsGeneralStats,

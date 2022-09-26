@@ -156,8 +156,6 @@ function structureCollectionStats(unstructuredCollectionStats) {
 function getCollectionsSectionsStatsFromStructuredCollectionsStats(structuredCollectionsStats) {
     console.log("utils :: collections-utils :: getCollectionsSectionsStatsFromStructuredCollectionsStats started");
 
-    console.log(structuredCollectionsStats);
-
     const collectionsGeneralStats = {};
     const collectionsOneHourStats = {};
     const collectionsSixHoursStats = {};
@@ -200,8 +198,6 @@ function getCollectionsSectionsStatsFromStructuredCollectionsStats(structuredCol
     collectionsSectionsStats["one_day"] = collectionsOneDayStats;
     collectionsSectionsStats["seven_days"] = collectionsSevenDaysStats;
     collectionsSectionsStats["thirty_days"] = collectionsThirtyDaysStats;
-
-    console.log(collectionsSectionsStats);
 
     console.log("utils :: collections-utils :: getCollectionsSectionsStatsFromStructuredCollectionsStats finished");
 

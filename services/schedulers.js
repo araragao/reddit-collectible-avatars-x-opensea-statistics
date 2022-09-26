@@ -27,7 +27,7 @@ const collectionsNameInOpenSeaStandard = [
 
 const collectionsName = collectionsUtils.getCollectionsNameFromCollectionsNameInOpenSeaStardard(collectionsNameInOpenSeaStandard);
 
-const getStatsFromOpenSea = cron.schedule("*/30 * * * * *", async () => {
+const getStatsFromOpenSea = cron.schedule("*/15 * * * * *", async () => {
   console.log("services :: schedulers :: getStatsFromOpenSea started");
 
   const collectionsStats = {};
@@ -44,6 +44,17 @@ const getStatsFromOpenSea = cron.schedule("*/30 * * * * *", async () => {
     collectionsStats[collectionsName[i]] = structuredCollectionStats;
   }
   storage.setStorageItem("collectionsStats", collectionsStats);
+
+  const currentDate = new Date(); 
+  const timestampStats = "Last Sync: " + currentDate.getUTCDate() + "/"
+                                       + (currentDate.getUTCMonth()+1)  + "/" 
+                                       + currentDate.getUTCFullYear() + " @ "  
+                                       + currentDate.getUTCHours() + ":"  
+                                       + currentDate.getUTCMinutes() + ":" 
+                                       + currentDate.getUTCSeconds() + " "
+                                       + "UTC";
+
+  storage.setStorageItem("timestampStats", timestampStats);
 
   console.log("services :: schedulers :: getStatsFromOpenSea finished");
 });
