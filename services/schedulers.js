@@ -7,6 +7,7 @@ var storage = require('./storage');
 const collectionsNameInOpenSeaStandard = [
   "5-boro-bodega-x-reddit-collectible-avatars",
   "avatar-rock-out-x-reddit-collectible-avatars",
+  "aww-friends-x-reddit-collectible-avatars",
   "aylia-x-reddit-collectible-avatars",
   "baked-goods-evils-x-reddit-collectible-avatars",
   "bites-of-brazil-x-reddit-collectible-avatars",
@@ -17,6 +18,7 @@ const collectionsNameInOpenSeaStandard = [
   "cute-snacks-x-reddit-collectible-avatars",
   "doodle-collection-x-reddit-collectible-avatars",
   "drag-queens-of-big-gay-baby-x-reddit-collectible",
+  "drip-squad-x-reddit-collectible-avatars",
   "enlightenment-x-reddit-collectible-avatars",
   "foustlings-x-reddit-collectible-avatars",
   "gettin-groovy-x-reddit-collectible-avatars",
@@ -26,6 +28,7 @@ const collectionsNameInOpenSeaStandard = [
   "joy-girls-club-x-reddit-collectible-avatars",
   "lightspeed-lads-x-reddit-collectible-avatars",
   "magic-of-the-woods-x-reddit-collectible-avatars",
+  "meme-team-x-reddit-collectible-avatars",
   "natsukashii-x-reddit-collectible-avatars",
   "old-school-cool-x-reddit-collectible-avatars",
   "peculiar-gang-x-reddit-collectible-avatars",
@@ -33,6 +36,7 @@ const collectionsNameInOpenSeaStandard = [
   "the-butterfly-garden-x-reddit-collectible-avatars",
   "the-minds-eyes-x-reddit-collectible-avatars",
   "the-senses-x-reddit-collectible-avatars",
+  "the-singularity-x-reddit-collectible-avatars",
   "wearing-your-emotions-x-reddit-collectible-avatars"
 ];
 
